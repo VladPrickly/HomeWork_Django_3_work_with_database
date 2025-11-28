@@ -8,12 +8,21 @@
             <h1><a href="/catalog">Каталог</a></h1>
         </div>
 
-        <div class="sort-block">
-            {# Здесь должен быть раздел с сортировкой #}
-        </div>
+<!--        <div class="sort-block">-->
+<!--            {# Здесь должен быть раздел с сортировкой #}-->
+<!--        </div>-->
 
         <div class="content">
-            {# Здесь должен отображаться каталог с телефонами #}
+            {% for phone in phones %}
+                <div class="phone">
+                    <a href="{% url 'phones' phone.slug %}">
+                        <h3>{{ phone.name }}</h3>
+                    </a>
+                    <div class="price">Стоимость: {{ phone.price }} ₽</div>
+                    <img height="250" src="{{ phone.image }}" alt="{{ phone.name }}"/>
+                </div>
+            {% endfor %}
+
         </div>
     </div>
 {% endblock %}
