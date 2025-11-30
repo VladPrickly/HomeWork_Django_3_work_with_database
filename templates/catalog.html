@@ -8,9 +8,12 @@
             <h1><a href="/catalog">Каталог</a></h1>
         </div>
 
-<!--        <div class="sort-block">-->
-<!--            {# Здесь должен быть раздел с сортировкой #}-->
-<!--        </div>-->
+        <div class="sort-block">
+            <span class="sort-item">Сортировать по:</span>
+            <a class="sort-item" href="?sort=name">названию</a>
+            <a class="sort-item" href="?sort=min_price">начиная с дешевых</a>
+            <a class="sort-item" href="?sort=max_price">начиная с дорогих</a>
+        </div>
 
         <div class="content">
             {% for phone in phones %}
